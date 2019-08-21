@@ -1,5 +1,6 @@
 import bottle
 from currency_converter import CurrencyConverter
+import datetime
 
 c = CurrencyConverter(fallback_on_wrong_date=True)
 
@@ -45,5 +46,8 @@ def get_tecaj(from_currency, to_currency):
     tecaj = c.convert(1, from_currency, to_currency)
     return tecaj
 
+def past_get_tecaj(from_currency, to_currency, my_date):
+    tecaj = c.convert(1, from_currency, to_currency, my_date)
+    return tecaj
 
 bottle.run(reloader=True, debug=True)
