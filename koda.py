@@ -50,4 +50,5 @@ def past_get_tecaj(from_currency, to_currency, my_date):
     tecaj = c.convert(1, from_currency, to_currency, my_date)
     return tecaj
 
+
 bottle.run(reloader=True, debug=True)
